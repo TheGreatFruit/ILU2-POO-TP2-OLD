@@ -20,5 +20,6 @@ public class BoundaryLibererEtal {
 				chaine.append("Vous avez vendu " + donneesEtal[4] + " sur " + donneesEtal[3] + " " + donneesEtal[2] + ".\nEn revoir " + nomVendeur + ", passez une bonne journée.\n");
 			}
 		}
+		System.out.println(chaine.toString());
 	}
 }

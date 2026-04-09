@@ -12,26 +12,31 @@ public class BoundaryAcheterProduit {
 
 	public void acheterProduit(String nomAcheteur) {
 		StringBuilder chaine = new StringBuilder();
-		if(! controlAcheterProduit.verifIdentite(nomAcheteur)) {
-			chaine.append("Je suis désolée " + nomAcheteur + "mais il faut être un habitant de notre village pour commercer ici.\n");
+
+		if (!controlAcheterProduit.verifIdentite(nomAcheteur)) {
+			chaine.append("Je suis désolée " + nomAcheteur
+					+ " mais il faut être un habitant de notre village pour commercer ici.\n");
 		} else {
 			chaine.append("Quel produit voulez-vous acheter ?\n");
 			String produit = Clavier.entrerChaine(chaine.toString());
+
+			chaine.setLength(0);
 			chaine.append("Chez quel commerçant voulez-vous acheter des " + produit + " ?\n");
-			controlAcheterProduit.trouverEtalsProduit(produit);
+
 			Gaulois[] listeVendeursProduit = controlAcheterProduit.trouverEtalsProduit(produit);
-			for(int i = 0; i < listeVendeursProduit.length; i++) {
-				//TODO Maybe make a method
+
+			for (int i = 0; i < listeVendeursProduit.length; i++) {
 				chaine.append(i + " - " + listeVendeursProduit[i].getNom() + "\n");
 			}
+
 			int numVendeur = Clavier.entrerEntier(chaine.toString());
 			String nomVendeur = listeVendeursProduit[numVendeur].getNom();
-			chaine.append(nomAcheteur + " se déplace jusqu'à l'étal du vendeur Bonemine.\n");
+
+			chaine = new StringBuilder();
+			chaine.append(nomAcheteur + " se déplace jusqu'à l'étal du vendeur " + nomVendeur + ".\n");
 			chaine.append("Bonjour " + nomAcheteur + "\n");
-			chaine.append("\n");
-			String produit = Clavier.entrerChaine(chaine.toString());
+
+			System.out.println(chaine.toString());
 		}
-		
-		chaine.toString();
 	}
 }

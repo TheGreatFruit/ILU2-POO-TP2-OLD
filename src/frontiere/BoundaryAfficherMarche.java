@@ -24,6 +24,6 @@ public class BoundaryAfficherMarche {
 				chaine.append(infosMarche[i] + ".\n");
 			}
 		}
-		chaine.toString();
+		System.out.println(chaine.toString());		
 	}
 }
