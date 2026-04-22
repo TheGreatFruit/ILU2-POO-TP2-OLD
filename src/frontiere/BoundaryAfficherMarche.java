@@ -19,7 +19,7 @@ public class BoundaryAfficherMarche {
 			for(int i=0; i<infosMarche.length;i++) {
 				chaine.append("- " + infosMarche[i]);
 				i++;
-				chaine.append(" qui vend " + infosMarche[i]);
+				chaine.append(" qui vend " + infosMarche[i] + " ");
 				i++;
 				chaine.append(infosMarche[i] + ".\n");
 			}

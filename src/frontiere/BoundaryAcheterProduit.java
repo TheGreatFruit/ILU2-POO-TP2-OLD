@@ -22,14 +22,12 @@ public class BoundaryAcheterProduit {
 
 			chaine.setLength(0);
 			chaine.append("Chez quel commerçant voulez-vous acheter des " + produit + " ?\n");
-
 			Gaulois[] listeVendeursProduit = controlAcheterProduit.trouverEtalsProduit(produit);
-
 			for (int i = 0; i < listeVendeursProduit.length; i++) {
-				chaine.append(i + " - " + listeVendeursProduit[i].getNom() + "\n");
+				chaine.append(i+1 + " - " + listeVendeursProduit[i].getNom() + "\n");
 			}
 
-			int numVendeur = Clavier.entrerEntier(chaine.toString());
+			int numVendeur = Clavier.entrerEntier(chaine.toString())-1;
 			String nomVendeur = listeVendeursProduit[numVendeur].getNom();
 
 			chaine = new StringBuilder();
@@ -39,4 +37,8 @@ public class BoundaryAcheterProduit {
 			System.out.println(chaine.toString());
 		}
 	}
+	
+	
+	
+	
 }
