@@ -6,12 +6,14 @@ import org.junit.jupiter.api.Test;
 
 import controleur.ControlEmmenager;
 import controleur.ControlVerifierIdentite;
+import villagegaulois.Village;
 
 class ControlVerifierIdentiteTest {
 
 	@Test
 	void testControlVerifierIdentite() {
-		ControlVerifierIdentite controlVerifierIdentite = new ControlVerifierIdentite(village);
+		Village village = new Village("Village gaulois 1", 10, 5);
+		ControlVerifierIdentite controlVerifierIdentite = new ControlVerifierIdentite(village );
 		assertNotNull(controlVerifierIdentite, "Constructeur ne renvoie pas null");
 	}
 
